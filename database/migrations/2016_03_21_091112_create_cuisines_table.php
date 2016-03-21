@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -35,7 +35,7 @@ class CreateCuisinesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cuisines');
         Schema::drop('restaurant_cuisine');
+        Schema::drop('cuisines');
     }
 }
