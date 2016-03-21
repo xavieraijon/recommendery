@@ -39,5 +39,6 @@ class CreateFeaturesTable extends Migration
     public function down()
     {
         Schema::drop('features');
+        Schema::drop('restaurant_feature');
     }
 }

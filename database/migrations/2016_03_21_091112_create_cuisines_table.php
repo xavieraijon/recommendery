@@ -35,5 +35,6 @@ class CreateCuisinesTable extends Migration
     public function down()
     {
         Schema::drop('cuisines');
+        Schema::drop('restaurant_cuisine');
     }
 }

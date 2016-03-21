@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStarDishesTable extends Migration
+class CreateLanguagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,8 @@ class CreateStarDishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('star_dishes', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-
-            $table->integer('recommendation_id')->unsigned();
-            $table->foreign('recommendation_id')->references('id')->on('recommendations')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ class CreateStarDishesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('star_dishes');
+        Schema::drop('languages');
     }
 }

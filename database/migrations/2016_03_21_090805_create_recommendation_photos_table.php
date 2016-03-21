@@ -14,6 +14,13 @@ class CreateRecommendationPhotosTable extends Migration
     {
         Schema::create('recommendation_photos', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('file');
+            $table->string('comment');
+
+            $table->integer('recommendation_id')->unsigned();
+            $table->foreign('recommendation_id')->references('id')->on('recommendations')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
