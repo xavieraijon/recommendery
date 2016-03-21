@@ -22,6 +22,7 @@ class CreateRecommendationPhotosTable extends Migration
             $table->foreign('recommendation_id')->references('id')->on('recommendations')->onDelete('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

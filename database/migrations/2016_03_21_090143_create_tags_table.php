@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->integer('tag_group_id')->unsigned();
             $table->foreign('tag_group_id')->references('id')->on('tag_groups')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         /**

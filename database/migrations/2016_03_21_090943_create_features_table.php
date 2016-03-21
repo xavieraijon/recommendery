@@ -16,6 +16,7 @@ class CreateFeaturesTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('restaurant_feature', function (Blueprint $table) {

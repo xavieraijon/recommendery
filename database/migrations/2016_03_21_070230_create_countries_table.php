@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagGroupsTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTagGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tag_groups', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +27,6 @@ class CreateTagGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tag_groups');
+        Schema::drop('countries');
     }
 }

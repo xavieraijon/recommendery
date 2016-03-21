@@ -23,6 +23,7 @@ class CreateRecommendationsTable extends Migration
             $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
